@@ -25,17 +25,7 @@
             </p>
             {% endif %}
 
-            <nav class="site-nav">
-                <ul>
-                    {% for page in site.pages %}
-                        {% if page.title %}
-                        <li>
-                            <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
-                        </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </nav>
+           {% include navigation.html location="header" %}
 
             
         </header>
@@ -56,6 +46,9 @@
 
         <footer class="site-footer">   
             <p> All rights reseved &copy; Thelazyperson {{ site.title }}</p>
+            
+            {% include navigation.html location="footer" %}
+        
         </footer>
 
     </div>
