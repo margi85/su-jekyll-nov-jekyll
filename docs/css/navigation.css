@@ -1,10 +1,23 @@
 .site-header {
     border-bottom: 1px solid var(--color-border-default);
     margin-bottom: var(--spacing-layout-elements);
+    padding-bottom: calc( var(--spacing-layout-elements) / 2);
+}
+
+.site-title {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+}
+
+.site-title a {
+    display: block;
+    padding: 0.2em 0;
 }
 
 .site-nav > ul {
     display: flex;
+    padding: 0;
 }
 
 .site-nav li {
@@ -13,12 +26,19 @@
     padding: 0 0.5em;
 }
 
+.site-nav li:first-child {
+    padding-left: 0;
+}
+
 .site-nav a {
     display: block;
     padding: 0.5em 1em;
+    border-radius: 0.3em;
+    background: #EEE;
 }
 
-.site-title a {
-    display: block;
-    padding: 0.5em;
+.site-nav a:hover {
+    background: var(--color-link-default);
+    color: var(--color-body-bgrd);
 }
+

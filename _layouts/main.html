@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
     <title>{{site.title}}</title>
-    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
 </head>
 <body>
 
@@ -15,16 +15,22 @@
 
         <header class="site-header">
 
+            {% if page.home == true %}
             <h1 class="site-title">
-                <a href="/">{{site.title}}</a>
+                <a href="{{ site.baseurl }}/">{{site.title}}</a>
             </h1>
+            {% else %}
+            <p class="site-title">
+                <a href="{{ site.baseurl }}/">{{site.title}}</a>
+            </p>
+            {% endif %}
 
             <nav class="site-nav">
                 <ul>
                     {% for page in site.pages %}
                         {% if page.title %}
                         <li>
-                            <a href="{{ page.url }}">{{ page.title }}</a>
+                            <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
                         </li>
                         {% endif %}
                     {% endfor %}
@@ -48,9 +54,8 @@
 
         </aside>
 
-        <footer class="site-footer">
-            <h6>{{site.title}}</h6>
-            <p> All rights reseved &copy; Thelazyperson</p>
+        <footer class="site-footer">   
+            <p> All rights reseved &copy; Thelazyperson {{ site.title }}</p>
         </footer>
 
     </div>

@@ -4,10 +4,15 @@
     padding: 2em;
 }
 
-.site-header {
-    display: flex;
+@media (min-width: 1024px) {
+    .site-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .site-header nav {
+        margin-left: auto;
+    }
 }
 
-.site-header nav {
-    margin-left: auto;
-}
+
