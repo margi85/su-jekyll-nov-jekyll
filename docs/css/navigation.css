@@ -42,3 +42,7 @@
     color: var(--color-body-bgrd);
 }
 
+.site-nav a i.fas:before {
+    color: #000;
+    margin-right: 0.25rem;
+}

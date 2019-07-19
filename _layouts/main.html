@@ -7,10 +7,14 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
     <title>{{site.title}}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/fontawsome/css/all.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
 </head>
-<body>
+<body class="
+{% if page.title %}page page-{{ page.title | slugify }}{% endif %}
+{% if post.title %}post{% endif %}
+{% if page.home %}home{% endif %}
+">
 
     <div class="site">
 
@@ -34,16 +38,14 @@
         <main class="site-main">
 
             {% if page.title %}
-            <h1>{{page.title}}</h1>
+                <h1>{{page.title}}</h1>
             {% endif %}
 
             {{content}}
 
         </main>
 
-        <aside class="site-sidebar">
-
-        </aside>
+        {% include sidebar.html %}
 
         <footer class="site-footer">   
             <p> All rights reseved &copy; Thelazyperson {{ site.title }}</p>
