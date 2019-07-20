@@ -46,3 +46,7 @@
     color: #000;
     margin-right: 0.25rem;
 }
+
+.site-nav a:hover i.fas:before {
+    color: white;
+}
