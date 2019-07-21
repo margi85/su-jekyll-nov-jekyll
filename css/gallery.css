@@ -10,8 +10,46 @@
     display: flex;
     flex: 0 0 30%;
     list-style: none outside;
-    overflow: hidden;
     margin-bottom: 5%;
+    position: relative;
+    box-shadow: 0 0 0.5em 0 rgba(0,0,0,0.5);
+    animation: slideIn 0.3s ease-in;
+    animation-fill-mode: both;
+}
+
+@media (max-width: 900px) {
+    .gallery li {
+        flex: 0 0 47%;
+        margin-bottom: 6%;
+    }  
+}
+
+@media (max-width: 600px) {
+    .gallery li {
+        flex: 0 0 100%;
+        margin-bottom: 3%;
+    }  
+}
+
+.gallery li:nth-child(2) { animation-delay: 0.2s; }
+.gallery li:nth-child(3) { animation-delay: 0.3s; }
+.gallery li:nth-child(4) { animation-delay: 0.4s; }
+.gallery li:nth-child(5) { animation-delay: 0.5s; }
+.gallery li:nth-child(6) { animation-delay: 0.6s; }
+.gallery li:nth-child(7) { animation-delay: 0.7s; }
+
+.gallery li:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top:0; left: 0; right: 0; bottom: 0;
+    box-shadow: 0 0 1.1em 0 rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.gallery li:hover:before {
+    opacity: 1;
 }
 
 .gallery a {
@@ -38,6 +76,14 @@
     transition: opacity 0.3s ease-in;
 }
 
+.gallery span:after {
+    display: block;
+    position: absolute;
+    content:'';
+    top: 0; left: 0; right: 0; bottom: 0;
+    box-shadow: 0 0 0.2rem 0 rgba(0,0,0,0.8) inset;
+}
+
 .gallery a:hover span:before {
     opacity: 0;
 }
@@ -48,3 +94,29 @@
     height: auto;
 }
 
+/* Снимката да се зарежда отпред */
+/* .modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .inner {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: block;
+    background: #FFF;
+    padding: 2em;
+    border-radius: 0.3em;
+    box-shadow: 0 0 1em 0.5em rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.modal .inner img {
+    display: block;
+    width: 100%;
+    height: auto;
+} */
