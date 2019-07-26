@@ -18,6 +18,7 @@ email: your-email@example.com
 description: I am not lazy
 destination: docs
 baseurl: "" # the subpath of your site, e.g. /blog
+# baseurel:"/su-jekyll-nov-jekyll" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: margi85
 github_username:  margi85
@@ -40,3 +41,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - docs
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - _assets
